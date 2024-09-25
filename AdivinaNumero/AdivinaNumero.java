@@ -8,9 +8,10 @@ public class AdivinaNumero {
         Scanner Scanner = new Scanner(System.in);
         // True = miesntras sea verdadero se juega una y otra vez
         boolean juegaDenuevo = true;
-        //crear un numero secreto entre 1 y 100
-        int numeroSecreto = random.nextInt(101);
+        
         while (juegaDenuevo) {
+            //crear un numero secreto entre 1 y 100
+            int numeroSecreto = random.nextInt(101);
             // Contador con 3 intentos
             int intentos = 0;
             int numeroIngresado = 0;
@@ -19,7 +20,7 @@ public class AdivinaNumero {
             // se ejecuta mientras jugarDeNuevo sea true y quiere seguir jugando
             do {
                 intentos++;
-             try {
+                try {
                 // lee el numero ingresado y la convierte a un número entero
                 numeroIngresado= Integer.parseInt(Scanner.nextLine());
                 if (numeroIngresado < 0 || numeroIngresado > 100) {
