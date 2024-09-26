@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Conecta41 {
+public class Conecta4 {
     //Clasificamos en private (no public), static (valor que no va cambiar en todo el juego) final (no modificar)
     private static final int FILAS = 6;
     private static final int COLUMNAS = 7;
@@ -146,7 +146,7 @@ public class Conecta41 {
     }
 
     public static void main(String[] args) {
-        Conecta41 juego = new Conecta41();
+        Conecta4 juego = new Conecta4();
         juego.jugar1();
     }
 }
