@@ -101,30 +101,64 @@ public class Conecta4 {
         return false;
     
     }
-    public void jugar() {
-        inicializarTablero();
+    public void jugar1() {
         Scanner scanner = new Scanner(System.in);
-
-        while (true) {
-            mostrarTablero();
-            System.out.print("Jugador " + jugadorActual + ", elige una columna: ");
-            int columna = scanner.nextInt() - 1;
-
-            if (colocarFicha(columna)) {
-                if (hayGanador()) {
-                    System.out.println("¡El jugador " + jugadorActual + " ha ganado!");
-                    break;
+        boolean playAgain = true;
+    
+        while (playAgain) {
+            inicializarTablero();
+            boolean juegoTerminado = false;
+    
+            while (!juegoTerminado) {
+                mostrarTablero();
+                System.out.print("Jugador " + jugadorActual + ", elige una columna (1-7): ");
+                int columna = scanner.nextInt() - 1;
+    
+                if (columna >= 0 && columna < COLUMNAS) {
+                    if (colocarFicha(columna)) {
+                        if (hayGanador()) {
+                            mostrarTablero();
+                            System.out.println("¡El jugador " + jugadorActual + " ha ganado!");
+                            juegoTerminado = true;
+                        } else if (tableroLleno()) {
+                            mostrarTablero();
+                            System.out.println("¡El juego ha terminado en empate!");
+                            juegoTerminado = true;
+                        } else {
+                            jugadorActual = (jugadorActual == 'X') ? 'O' : 'X';
+                        }
+                    } else {
+                        System.out.println("Columna llena. Intenta otra vez.");
+                    }
+                } else {
+                    System.out.println("Columna inválida. Por favor, elige un número entre 1 y 7.");
                 }
-                jugadorActual = (jugadorActual == 'X') ? 'O' : 'X';
-            } else {
-                System.out.println("Columna llena. Intenta otra vez.");
+            }
+    
+            System.out.print("¿Quieres jugar de nuevo? (si o no): ");
+            String respuesta = scanner.next().toLowerCase();
+            playAgain = respuesta.equals("si");
+            if (playAgain) {
+                jugadorActual = 'X'; // Reiniciar el jugador actual
             }
         }
+    
+        System.out.println("Gracias por jugar!");
         scanner.close();
+    }
+    
+    // Método auxiliar para verificar si el tablero está lleno
+    private boolean tableroLleno() {
+        for (int j = 0; j < COLUMNAS; j++) {
+            if (tablero[0][j] == ' ') {
+                return false;
+            }
+        }
+        return true;
     }
 
     public static void main(String[] args) {
         Conecta4 juego = new Conecta4();
-        juego.jugar();
+        juego.jugar1();
     }
 }
