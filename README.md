@@ -17,3 +17,12 @@ Y te informa de la cantidad de intentos que te llevó adivinarlo
 Luego por ultimo se pregunta si quieres seguir jugando, en caso de que tu respuesta sea "no"
 El programa finaliza
 Y en caso de que sea "si", el programa genera un numero nuevo aleatorio
+
+"#  Conecta 4
+El juego consiste en alinear 4 fichas consecutivas iguales en horizontal, vertical o diagonal.
+Se muestra un tablero  con huecos libres para poder rellenar con "x" o  "o" de 6 filas y 7 columnas en la consola
+Se solicita al jugador X : elegir una columna
+La ficha se inserta en la columna elegida y se dirige al hueco disponible empezando por las filas de abajo.
+A continuación, se solicita al jugador O elegir una columana
+Se repite el proceso cada vez que un jugar elige columna y se puede ver en cada proceso los huevos rellenados por las posiciones de las fichas colocadas. 
+En cuanto un jugador haya conseguido rellenar cuatro fichas consecutivas, se muestra una felicitación e indicando cual de los dos jugadores ha ganado. 

@@ -23,10 +23,10 @@ public class Ahorcado {
             "   ! !       _|_"
         };
         Random aleatorio = new Random();
-        // se crea un indice que aleatoriamente representa un numero, cada numero representa
+        // un entero que almacena el indice de la palabra aleatoria , cada numero representa
         // una posicion en la lista de arrays
         int indice = aleatorio.nextInt(palabrasposibl.size());
-        // se asigna el numero del indice a una variable de tipo string "palabraOculta"
+        // se asigna el indice a una variable de tipo string "palabraOculta"
         String palabraOculta = palabrasposibl.get(indice);
         int intentos = 6;
         // se crea una nueva variable que va a tener tantos guiones como letras tenga la palabra escogida

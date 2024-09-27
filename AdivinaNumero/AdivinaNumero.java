@@ -1,4 +1,4 @@
-// import un objeto Random
+// import un objeto Random para generar números aleatorios
 import java.util.Random;
 // import un objeto Scanner
 import java.util.Scanner;
@@ -12,7 +12,7 @@ public class AdivinaNumero {
         while (juegaDenuevo) {
             //crear un numero secreto entre 1 y 100
             int numeroSecreto = random.nextInt(101);
-            // Contador con 3 intentos
+            // Contador con intentos
             int intentos = 0;
             int numeroIngresado = 0;
             System.out.println("Adivina el número!");
